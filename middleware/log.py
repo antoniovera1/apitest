@@ -9,11 +9,30 @@ class ResponseTimeLogMiddleware:
     """
     Middleware used to log the duration from the moment the API is called
     until the response is sent.
+
+    Attributes:
+        get_response (function): The function to be used to get the response.
+            This follows Django convention on middleware implementation as
+            explained here:
+            https://docs.djangoproject.com/en/4.1/topics/http/middleware/
     """
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
+        """
+        This magic method is called when request comes through the middleware.
+        For more information please visit:
+            https://docs.djangoproject.com/en/4.1/topics/http/middleware/
+
+        Args:
+            request (WSGIRequest): The request which has come to the
+                middleware.
+
+        Returns:
+            Response: The response from the Django service.
+        """
+
         # Get the time the request was recieved
         start_time = time.time()
 
