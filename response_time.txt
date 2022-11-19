@@ -1,0 +1,1 @@
+[GET /products/ 200] Request duration: 1.2357409000396729 secs

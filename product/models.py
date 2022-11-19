@@ -1,0 +1,58 @@
+from django.db import models
+
+from services.random_org import get_random_int
+
+
+class Product(models.Model):
+    """
+    This is the models class for the products on the Django ORM.
+
+    Attributes:
+        product_id (models.AutoField): The ID of the product. This is the
+            primary key.
+        name (models.CharField): The name of the product.
+        status (models.IntegerField): The status of the product. This tells us
+            if the product is active.
+        stock (models.IntegerField): The number of products on stock.
+        description (models.TextField): The description of the product.
+        price (models.DecimalField): The price of the product.
+
+    """
+
+    product_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    status = models.IntegerField(default=1, choices=((1, "Active"), (0, 'Inactive')))
+    stock = models.IntegerField()
+    description = models.TextField()
+    price = models.DecimalField(max_digits=252, decimal_places=2)
+
+    @property
+    def status_name(self):
+        """
+        Finds the name of the current status of the product
+
+        Returns:
+            str: The name of the product's status.
+        """
+        return self.get_status_display
+
+    @property
+    def discount(self):
+        """
+        Finds the discount on the product by using an external API to generate
+        a random integer between 0 and 100.
+
+        Returns:
+            int: A random integer.
+        """
+        return get_random_int()
+
+    @property
+    def final_price(self):
+        """
+        Calculates the final price of the product by substracting the discount.
+
+        Returns:
+            float: The final price of the product.
+        """
+        return float(self.price) * ((100-self.discount) / 100)
