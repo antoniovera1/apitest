@@ -45,14 +45,19 @@ def get_random_int(min_int: int=0,
 
     attempt_num = 1
     while True:
+        # Send the request
         response = requests.get(url, params=params)
         if response.status_code == 200:
-            random_num = response.json()
+            # If the response has no error
+            # Transform the response text into an int
+            random_num = int(response.text)
             return random_num
 
         if attempt_num >= max_attempts:
+            # When the max number of attemts is reached
             break
         attempt_num += 1
 
+    # When the random int was not returned successfully
     raise exceptions.APIException(
         "Could not connect to the random.org service")
