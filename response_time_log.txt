@@ -1,3 +1,5 @@
 [19/11/2022 04:00:41] "GET /products/ 200" Request duration: 1.092458963394165 secs
 [19/11/2022 04:01:07] "GET /products/ 200" Request duration: 1.4502928256988525 secs
 [19/11/2022 04:01:13] "GET /products/ 200" Request duration: 1.4366447925567627 secs
+[19/11/2022 04:14:30] "GET / 404" Request duration: 0.015481233596801758 secs
+[19/11/2022 04:14:40] "GET /api/v1/products/ 200" Request duration: 0.8583018779754639 secs
