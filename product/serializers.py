@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from .models import Product
+from status_name.views import status_view
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -15,7 +16,7 @@ class ProductSerializer(serializers.ModelSerializer):
         final_price (serializers.ReadOnlyField()): A read only field which
             calls the property final_price from the model.
     """
-    status_name = serializers.ReadOnlyField()
+    status_name = serializers.SerializerMethodField()
     discount = serializers.ReadOnlyField()
     final_price = serializers.ReadOnlyField()
 
@@ -39,3 +40,19 @@ class ProductSerializer(serializers.ModelSerializer):
             'discount',
             'final_price'
         )
+
+    def get_status_name(self, obj):
+        """
+        Finds the name of the current status of the product
+
+        Returns:
+            str: The name of the product's status.
+        """
+        request = self.context.get("request")
+        if request is None:
+            return self.get_status_display
+
+        response = status_view(request._request)
+        status_name = response.data[obj.status]
+
+        return status_name

@@ -22,19 +22,9 @@ class Product(models.Model):
     product_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     status = models.IntegerField(default=1, choices=((1, "Active"), (0, 'Inactive')))
-    stock = models.IntegerField()
-    description = models.TextField()
+    stock = models.IntegerField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=252, decimal_places=2)
-
-    @property
-    def status_name(self):
-        """
-        Finds the name of the current status of the product
-
-        Returns:
-            str: The name of the product's status.
-        """
-        return self.get_status_display
 
     @property
     def discount(self):
