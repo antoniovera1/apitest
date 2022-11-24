@@ -1,6 +1,19 @@
 # Tekton test API
 
-API service for a product inventory managment web system
+API service for a product inventory management web system
+
+## Run the server
+
+You can run this API server through Docker Compose. You need to install docker and docker compose on your computer and run the following commands inside the API's main directory:
+
+```
+docker compose build
+```
+```
+docker compose up
+```
+
+After your stack is running, you need to run the following one-shot command to migrate the models into the database.
 
 ```
 docker-compose run apiserver python3 manage.py migrate
