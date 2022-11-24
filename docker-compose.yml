@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  apiserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_NAME: "tekton"
+      DATABASE_USER: "tektonuser"
+      DATABASE_PASSWORD: "e^&Gkpwio$gX22"
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "tektonuser"
+      POSTGRES_PASSWORD: "e^&Gkpwio$gX22"
+      POSTGRES_DB: tekton

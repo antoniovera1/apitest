@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 
 @cache_page(5*60)
-@api_view(['GET'])
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
 def status_view(request):
     content = {
         1: "Active", 
