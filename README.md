@@ -19,6 +19,10 @@ After your stack is running, you need to run the following one-shot command to m
 docker compose run apiserver python3 manage.py migrate
 ```
 
+## API comunication
+
+You can use an interactive UI to check the products at `<API URL>/api/v1/products`.
+
 ## Documentation
 
 You can find 3 kinds of documentation on this API:
