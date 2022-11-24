@@ -238,3 +238,5 @@
 [24/11/2022 04:52:05] "GET /api/v1/swagger/ 200" Request duration: 0.019560813903808594 secs
 [24/11/2022 04:52:09] "POST /api/v1/products/ 400" Request duration: 0.002633333206176758 secs
 [24/11/2022 04:52:32] "POST /api/v1/products/ 201" Request duration: 0.7611181735992432 secs
+[24/11/2022 04:56:18] "GET /api/v1/redoc/ 200" Request duration: 0.005434989929199219 secs
+[24/11/2022 04:56:18] "GET /api/v1/redoc/ 200" Request duration: 0.013622522354125977 secs
