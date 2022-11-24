@@ -168,3 +168,9 @@
 [24/11/2022 03:34:10] "GET /api/v1/products/ 200" Request duration: 11.093498706817627 secs
 [24/11/2022 03:35:32] "GET /api/v1/products/ 200" Request duration: 1.5569846630096436 secs
 [24/11/2022 03:35:37] "POST /api/v1/products/ 400" Request duration: 0.020020246505737305 secs
+[24/11/2022 04:04:29] "GET / 404" Request duration: 0.020639657974243164 secs
+[24/11/2022 04:04:36] "GET /api/v1/products/ 500" Request duration: 0.0683279037475586 secs
+[24/11/2022 04:05:19] "GET /api/v1/products/ 200" Request duration: 1.7969977855682373 secs
+[24/11/2022 04:05:26] "POST /api/v1/products/ 400" Request duration: 0.014377355575561523 secs
+[24/11/2022 04:05:31] "GET /api/v1/products/ 200" Request duration: 2.945096254348755 secs
+[24/11/2022 04:05:33] "GET /api/v1/products/ 200" Request duration: 3.2082366943359375 secs

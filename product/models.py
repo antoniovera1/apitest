@@ -25,6 +25,8 @@ class Product(models.Model):
     stock = models.IntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=252, decimal_places=2)
+    part_number = models.CharField(max_length=255, null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True)
 
     @property
     def discount(self):

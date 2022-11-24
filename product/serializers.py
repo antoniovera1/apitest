@@ -38,7 +38,9 @@ class ProductSerializer(serializers.ModelSerializer):
             'description',
             'price',
             'discount',
-            'final_price'
+            'final_price',
+            'part_number',
+            'location',
         )
 
     def get_status_name(self, obj):
