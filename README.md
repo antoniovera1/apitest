@@ -16,7 +16,7 @@ docker compose up
 After your stack is running, you need to run the following one-shot command to migrate the models into the database.
 
 ```
-docker-compose run apiserver python3 manage.py migrate
+docker compose run apiserver python3 manage.py migrate
 ```
 
 ## Documentation
